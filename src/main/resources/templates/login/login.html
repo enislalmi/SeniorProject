@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="_csrf" th:attr="content=${_csrf.token}" />
+<meta name="_csrf_header" th:attr="content=${_csrf.headerName}" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="NOINDEX, NOFOLLOW" />
+<title>Spring Project | Login</title>
+<link th:href="@{/resources/static/css/bootstrap.min.css}" type="text/css" rel="stylesheet" media="all" />
+<link th:href="@{/resources/static/css/mdb.min.css}" type="text/css" rel="stylesheet" media="all" />
+<link th:href="@{/resources/static/fonts/css/all.css}" type="text/css" rel="stylesheet" media="all" />
+<style type="text/css">
+ body {
+  background: url('https://htmlcolorcodes.com/assets/images/colors/pastel-green-color-solid-background-1920x1080.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+</style>
+</head>
+  
+<body class="fixed-sn white-skin">
+	<header>
+		<section class="p-5 my-md-5 text-center">
+			<div class="flex-top">
+				<div class="container wow fadeIn">
+					<div class="row">
+						<div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+							<form th:action="@{/login}" th:object="${adminUser}" method="post" style="width: 100%;">
+								<div class="card">
+									<div class="card-body">
+										<div class="form-header">  
+											<h4 class="h4-responsive">
+												<span class="fa fa-lock text-success"></span>&nbsp;Authenticate:
+											</h4>
+										</div>
+										<div class="md-form">
+										<label for="username">Username</label>
+											<span class="fa fa-user prefix text-success"></span> <input type="text" id="username" th:field="*{username}" name="username" class="form-control" autocomplete="off" required="required"> 
+										</div>
+										<div class="md-form">
+										    <label for="password">Password</label>
+											<span class="fa fa-lock prefix text-success"></span> <input type="password" id="password" th:field="*{password}" name="password" class="form-control" autocomplete="off" required="required"> 
+										</div><br><br>
+										<div class="text-center">
+											<button class="btn btn-light btn-md btn-block"><span class="fa fa-check text-success"></span>&nbsp;Login</button>
+										</div>
+										<div class="modal-footer text-center"></div>
+										<div class="alert alert-danger" id="error-div" th:if="${loginError} != null"><h6 th:text="${loginError}"></h6></div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</header>
+	<script type="text/javascript" th:src="@{/resources/static/js/jquery-3.5.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/static/js/jquery.sticky.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/static/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/static/js/mdb.min.js}"></script>
+       <footer
+		th:replace="~{fragments/HeaderAndFooter :: footer}">
+	</footer>
+</body>
+</html>

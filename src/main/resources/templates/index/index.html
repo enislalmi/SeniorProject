@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+   <head>
+       <title>Spring Project | Home</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
+       
+       <link th:href="@{/resources/static/css/bootstrap.min.css}" type="text/css" rel="stylesheet" media="all" />
+       <link th:href="@{/resources/static/fonts/css/all.css}" type="text/css" rel="stylesheet" media="all" />
+       <link th:href="@{/resources/static/css/mdb.min.css}" type="text/css" rel="stylesheet" media="all" />
+       <link th:href="@{/resources/static/css/jquery-ui.css}" type="text/css" rel="stylesheet" media="all" />
+       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style> body {
+  background: url('https://htmlcolorcodes.com/assets/images/colors/pastel-green-color-solid-background-1920x1080.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}</style>
+   </head>
+   <body>
+    <header 
+		th:replace="~{fragments/HeaderAndFooter :: header}">
+	</header>
+	<nav th:replace="~{fragments/Navigation :: topBar}"></nav>
+    <!-- <th:block th:replace="includes/header::content"></th:block> -->
+    <br> </br>  <br> </br> 
+ <br> </br>  <br> </br>     
+       <div class="start-button" align="center">
+           <a th:href="@{/subjects}" class="btn btn-success btn-md" type="button">Start Your Computer Adaptive Testing</a>
+       </div>
+       <div class="spacer">&nbsp;</div>
+      
+       <script type="text/javascript" th:src="@{/resources/static/js/jquery-3.5.1.min.js}"></script>
+       <script type="text/javascript" th:src="@{/resources/static/js/jquery-ui.js}"></script>
+       <script type="text/javascript" th:src="@{/resources/static/js/jquery-migrate-3.0.0.min.js}"></script>
+       <script type="text/javascript" th:src="@{/resources/static/js/popper.min.js}"></script>
+       <script type="text/javascript" th:src="@{/resources/static/js/jquery.sticky.min.js}"></script>
+       <script type="text/javascript" th:src="@{/resources/static/js/bootstrap.min.js}"></script>
+       <script type="text/javascript" th:src="@{/resources/static/js/mdb.min.js}"></script>
+       
+          <footer
+		th:replace="~{fragments/HeaderAndFooter :: footer}">
+	</footer>
+   </body>
+</html>

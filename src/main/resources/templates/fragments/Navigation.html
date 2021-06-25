@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html 	xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title>Navigation</title>
+</head>
+<body>
+	<!-- Main navigation -->
+	<nav th:fragment="topBar">
+		<div class="w3-bar w3-light-grey ">
+    		<a th:href = "@{/logout}" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-black">Logout</a>
+       	
+		</div>
+	</nav>
+	
+</body>
+</html>
